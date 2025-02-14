@@ -19,12 +19,14 @@ function App() {
   }
 
   const check = () => {
-    // const API_URL = process.env.REACT_APP_API_URL;
-    //const API_URL = https://express-login-backend-production.up.railway.app
+   
+    // var loginCheck = axios.post("http://localhost:5000/login", { "username": uname, "password": pass })
 
-    // var loginCheck = axios.post(`${API_URL}/login`, { "username": uname, "password": pass });
+    var loginCheck = axios.post("https://express-login-backend-production.up.railway.app/login", {
+      "username": uname,
+      "password": pass
+    });
 
-    var loginCheck = axios.post("http://localhost:5000/login", { "username": uname, "password": pass })
 
     loginCheck.then((item) => {
       if (item.data == true) {
